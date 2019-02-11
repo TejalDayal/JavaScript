@@ -1,0 +1,70 @@
+<!-- 10.Create a form to accept feedback from the user and write JavaScript program to validate a form .
+The following fields should be present in the form:
+a.Name
+b.Email
+c.Feedback
+d.Feedback type(suggestion, bug, fature request) (dropdown) -->
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+
+            <div id="modal_wrapper">
+            <p>Feedback Form</p>
+            
+            <form id="modal_feedback" method="POST" action="#" accept-charset="UTF-8">
+            <p><label>Your Name<strong>*</strong><br>
+            <input type="text" autofocus required size="48" name="name" value=""></label></p>
+            <p><label>Email Address<strong>*</strong><br>
+            <input type="email" required title="Please enter a valid email address" size="48" name="email" value=""></label></p>
+            <p><label>Feedback<strong>*</strong><br>
+            <textarea required name="message" cols="48" rows="8"></textarea></label></p>
+            <p><label>Feedback Type<strong>*</strong><br>
+            <select name='feedback-dropdown' >
+                    <option selected="" value="choose">Select</option>
+                    <option value="suggestion">Suggestion</option>
+                    <option value="bug">Bug</option>
+                    <option value="faturerequest">Fature Request</option>
+                </select><br/></label></p>
+            <p><input type="submit" name="feedbackForm" value="Send Message"></p>
+            </form>
+            
+            </div> 
+
+                <script type="text/javascript">
+
+var checkForm = function(e)
+{
+  var form = (e.target) ? e.target : e.srcElement;
+  if(form.name.value == "") {
+    alert("Please enter your Name");
+    form.name.focus();
+    e.preventDefault ? e.preventDefault() : e.returnValue = false;
+    return;
+  }
+  if(form.email.value == "") {
+    alert("Please enter a valid Email address");
+    form.email.focus();
+    e.preventDefault ? e.preventDefault() : e.returnValue = false;
+    return;
+  }
+  if(form.message.value == "") {
+    alert("Please enter your Feedback");
+    form.message.focus();
+    e.preventDefault ? e.preventDefault() : e.returnValue = false;
+    return;
+  }
+  var e=document.getElementByName("feedback-dropdown").value;
+  //var dropdown = form.feedback-dropdown.value;
+  if(e=="choose"){
+      alert("Please select a option");
+      form.feedback-dropdown.focus();
+    //   e.preventDefault ? e.preventDefault() : e.returnValue = false;
+    // return; 
+  }
+};
+
+</script>
+    </body>
+    </html>

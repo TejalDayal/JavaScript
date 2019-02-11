@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function abc() {
+			var a=document.getElementById('text');
+			document.getElementById('img').src=a.value;
+			document.getElementById('img').height =500;
+			document.getElementById('img').width =500;
+		}
+	</script>
+</head>
+<body>
+<img src="" id="img">
+	<input type="text" id="text">
+	<input type="button" value="enter url" onclick="abc()">
+</body>
+</html>

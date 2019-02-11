@@ -1,0 +1,91 @@
+<!-- 9.Create a form and write JavaScript program to validate a form which accepts name, age, Email, 
+Gender (radio button), hobbies(Check box) and phone number of a student. 
+a.At Least two hobbies should be selected
+b.Age should not be > 125 -->
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+
+            <div id="form">
+            <p>Feedback Form</p>
+            
+            <form id="feedback" method="POST" action="#" accept-charset="UTF-8">
+            <p><label>Your Name<strong>*</strong><br>
+            <input type="text" autofocus required size="48" name="name" value=""></label></p>
+            <p><label>Age<strong>*</strong><br>
+            <input type="text" autofocus required size="48" name="age" value=""></label></p>
+            <p><label>Email Address<strong>*</strong><br>
+            <input type="email" required title="Please enter a valid email address" size="48" name="email" value=""></label></p>
+            <p><label>Gender<strong>*</strong><br>
+                <input type="radio" name="gender" value="male" > Male<br>
+                <input type="radio" name="gender" value="female"> Female<br>
+                <input type="radio" name="gender" value="other"> Other</label></p>
+            <p><label>Hobbies<strong>*</strong><br>
+                <input type="checkbox" name="hobbies" value="Reading"> Reading<br>
+                <input type="checkbox" name="hobbies" value="Travelling"> Travelling<br>
+                <input type="checkbox" name="hobbies" value="Eating" > Eating<br>
+                <input type="checkbox" name="hobbies" value="Sleeping" > Sleeping</label></p>
+            <p><label>Phone No<strong>*</strong><br>
+                <input type="text" autofocus required size="48" name="name" value=""></label></p>
+            <p><input type="submit" name="feedbackForm" value="Send Message"></p>
+            </form>
+            </div> 
+
+                <script type="text/javascript">
+
+var checkForm = function(e)
+{
+    var ck_phoneno = /^[0-9]{1,10}$/;
+  var form = (e.target) ? e.target : e.srcElement;
+  if(form.name.value == "") {
+    alert("Please enter your Name");
+    form.name.focus();
+    e.preventDefault ? e.preventDefault() : e.returnValue = false;
+    return;
+  }
+  if(form.email.value == "") {
+    alert("Please enter a valid Email address");
+    form.email.focus();
+    e.preventDefault ? e.preventDefault() : e.returnValue = false;
+    return;
+  }
+  if(form.message.value == "") {
+    alert("Please enter your Feedback");
+    form.message.focus();
+    e.preventDefault ? e.preventDefault() : e.returnValue = false;
+    return;
+  }
+    var a=form.phoneno.value;
+  var phoneno = /^[0-9]{10,10}$/;
+  if((a.match(phoneno))
+        {
+      return;
+        }
+      else
+        {
+        alert("message");
+        return false;
+        }
+  var i=form.hobbies.length;
+var boxesTicked = "" 
+for (i; i > 0; i--) { 
+if (document.getElementsByName('hobbies')[i].checked) { 
+boxesTicked = boxesTicked + document.getElementsByName('hobbies')[i].value + "\n" 
+} 
+} 
+if (boxesTicked <2 ) { 
+alert ("Please choose at least two models to compare.") 
+return false 
+} 
+else { 
+alert (boxesTicked) 
+return true; 
+ 
+} 
+};
+
+</script>
+    </body>
+    </html>

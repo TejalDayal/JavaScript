@@ -1,0 +1,25 @@
+<!-- Accept a number from the user. Check whether it is prime or not.
+A number is said to be prime if it has not factors except for 1 and the number itself, or if the number is 2. -->
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>         
+<script>
+                var n=parseInt(prompt("Enter The No: "));
+                var i=2;
+                if (n==0 ||  n==1){
+                    document.write(n," is not prime number.");
+                }
+                else{
+                    while( i<n){
+                        if(n%i==0){
+                            document.write(n," is not prime number.");
+                            break;}
+                        else{
+                            document.write(n," is prime number.");
+                        }
+                    i+=1 }} 
+            </script>
+    </body>
+</html>

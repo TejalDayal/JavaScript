@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function Check() {
+			var age = document.getElementById('age').value;
+			if(age>125){
+				alert("Age should be less then 125");
+			}
+			var hob = document.getElementsByName('c');
+			var count = 0;
+			for(var i in hob){
+				//alert(hob[i].checked)
+				if(hob[i].checked)
+					count++;
+					//alert(count);
+			}
+			if(count<2){
+				alert("Please select minimum 2 hobbies");
+			}
+		}
+	</script>
+</head>
+<body>
+<form id="frm">
+	Name: <input type="text" id ="name" name=""><br>
+	Age: <input type="text" id ="age" name=""><br>
+	Email: <input type="text" id ="email" name=""><br>
+	Gender: <input type="radio" value="male" name="gender">Male
+			<input type="radio" value="female" name="gender">Female<br>
+	Hobbies: <input type="checkbox" name="c">Cricket
+			<input type="checkbox" name="c">Football
+			<input type="checkbox" name="c">Badmintion
+	<br>Phone: <input type="text" id ="no" name="">
+	<input type="button" value="Submit" onclick='Check()' name="">
+</form>
+</body>
+</html>

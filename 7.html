@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>send button</title>
+	<script type="text/javascript">
+		function Check() {
+			var frm=document.getElementById('frm');
+			var element=frm.elements;
+			for(var i in element){
+				if(element[i].type=='text')
+					if(element[i].value==''){
+						alert("value missing enter all the values")
+						break;
+					}
+					else if(element[2].value.length==10)
+		document.getElementById('dem').innerHTML="Name: "+element[0].value+"<br>d-o-b: "+element[1].value +"<br>phone: "+element[2].value;
+	else
+		alert("phone number should be of 10 digits")
+		break;
+		}
+			}
+	</script>
+</head>
+<body>
+<form id='frm'>
+	Name:<input type="text" id='' name="">
+	d-o-b:<input type="text" name="">
+	phone number:<input type="text" name="">
+	<input type="button" value="send" onclick='Check()' name="">
+</form>
+<div id="dem"></div>
+</body>
+</html>

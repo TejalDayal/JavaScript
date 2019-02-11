@@ -1,0 +1,82 @@
+<!-- 7.Accept the user's name, date of birth and phone number. Create a Send button.
+When the button is clicked, ensure that no field is left blank,
+ and that the phone number is no longer than 10 digits.
+Display the name, age and phone number in a div tag below the Send button. -->
+<html>
+    
+    <head></head>
+    
+    <body id="public">
+        <div style="height:30px"></div>
+        
+                    <label class="desc" id="title1" for="Field1">
+                        Full Name </label>
+                    <div>
+                        <input id="name" name="name" type="text" class="field text medium" value=""  />
+                    </div>
+                    
+                        <label class="desc" id="title2" for="Field2">
+                            Date Of Birth </label>
+                        <div>
+                            <input id="dob" name="dob" type="date" class="field text medium" value=""  />
+                        </div>
+                        <label class="desc" id="title3" for="Field3">
+                            Phone No </label>
+                        <div>
+                            <input id="phoneno" name="phoneno" type="text" class="field text medium" value=""  />
+                        </div><br/><br/>
+                        <input type="submit" value="Send" onclick="validate()"/>
+                        <div>
+
+                        </div>
+        
+        <script type="text/javascript">
+            var ck_name = /^[A-Za-z ]{3,40}$/;
+            var ck_phoneno = /^[0-9]{1,10}$/;
+
+
+            function validate(){
+                var name = document.getElementById(name);
+                var phoneno=document.getElementById(phoneno);
+                
+                
+                var errors = [];
+                
+                if (!ck_name.test(name)) {
+                    errors[errors.length] = "You valid Name .";
+                }
+                
+                if (!ck_phoneno.test(phoneno)) {
+                    errors[errors.length] = "You must enter a valid phone no.";
+                }
+                if (name.value.length == 0) {
+                    document.getElementById('head').innerText = "* All fields are mandatory *"; // This segment displays the validation rule for all fields
+                    name.focus();
+                    return false;
+                    }
+                if (phoneno.value.length == 0) {
+                    document.getElementById('head').innerText = "* All fields are mandatory *"; // This segment displays the validation rule for all fields
+                    phoneno.focus();
+                    return false;
+                    }
+                
+                if (errors.length > 0) {
+                    reportErrors(errors);
+                    return false;
+                }
+                
+                return true;
+            }
+
+            function reportErrors(errors){
+                var msg = "Please Enter Valide Data...\n";
+                for (var i = 0; i<errors.length; i++) {
+                    var numError = i + 1;
+                    msg += "\n" + numError + ". " + errors[i];
+                }
+                alert(msg);
+            }   
+        </script>
+    </body>
+    
+    </html>

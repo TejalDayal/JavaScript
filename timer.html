@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+var countDown = parseInt(prompt("enter the count","60"));
+var x = setInterval(function() {
+
+    var distance = countDown--;
+    document.getElementById("demo").innerHTML = distance+" seconds left";
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body>
+<p id="demo"></p>
+</body>
+</html>
